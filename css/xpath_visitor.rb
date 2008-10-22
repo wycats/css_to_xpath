@@ -43,9 +43,9 @@ module Nokogiri
       end
 
       def visit_direct_adjacent_selector node
-        node.value.last.accept(self) +
+        node.value.first.accept(self) +
           "/following-sibling::*[1]/self::" +
-           node.value.first.accept(self)
+           node.value.last.accept(self)
       end
 
       def visit_id node
