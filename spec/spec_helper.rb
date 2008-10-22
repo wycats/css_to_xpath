@@ -11,7 +11,11 @@ HTML = <<HERE
       <span food='bar' class='bar foo'>is wycats</span>
       <span foo='bar baz' class='food'>Span</span>
       <span foo='baz bar'>Span</span>
+      <div>Some other nested div</div>
     </div>
+    <div sibling="yep">This is a sibling yo</div>
+    <p class="top">Some other paragraph</p>
+    <p class="middle">One more paragraph</p>
     <p>Some text</p>
   </body>
 </html>
