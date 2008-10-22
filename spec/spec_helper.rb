@@ -1,4 +1,6 @@
+require "rubygems"
 require "libxml"
+require 'spec'
 require File.join(File.dirname(__FILE__), "..", "css")
 
 HTML = <<HERE
