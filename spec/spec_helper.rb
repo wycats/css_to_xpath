@@ -7,6 +7,8 @@ HTML = <<HERE
     <div foo='bar'>Hello
       <span foo='bard'>My name</span>
       <span food='bar'>is wycats</span>
+      <span foo='bar baz'>Span</span>
+      <span foo='baz bar'>Span</span>
     </div>
     <p>Some text</p>
   </body>
