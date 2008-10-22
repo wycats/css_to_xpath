@@ -55,12 +55,12 @@ module Nokogiri
       end
 
       def visit_attribute_condition node
-        attribute = if (node.value.first.type == :FUNCTION) or (node.value.first.value.first =~ /^@/)
-                      ''
-                    else
-                      'child::'
-                    end
-        attribute += node.value.first.accept(self)
+        # attribute = if (node.value.first.type == :FUNCTION) or (node.value.first.value.first =~ /^@/)
+        #               ''
+        #             else
+        #               'child::'
+        #             end
+        attribute = "@#{node.value.first.accept(self)}"
 
         # Support non-standard css
         attribute.gsub!(/^@@/, '@')
