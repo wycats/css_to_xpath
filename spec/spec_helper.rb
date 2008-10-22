@@ -4,10 +4,10 @@ require File.join(File.dirname(__FILE__), "..", "css")
 HTML = <<HERE
 <html>
   <body>
-    <div foo='bar'>Hello
-      <span foo='bard'>My name</span>
-      <span food='bar'>is wycats</span>
-      <span foo='bar baz'>Span</span>
+    <div foo='bar' class='foo'>Hello
+      <span foo='bard' class='foo bar'>My name</span>
+      <span food='bar' class='bar foo'>is wycats</span>
+      <span foo='bar baz' class='food'>Span</span>
       <span foo='baz bar'>Span</span>
     </div>
     <p>Some text</p>
