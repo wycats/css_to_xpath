@@ -27,11 +27,17 @@ module Nokogiri
         def matches?(text)
           @doc = LibXML::XML::HTMLParser.string(text).parse
           @xpath = Nokogiri::CSS::Parser.new.parse(@selector)[0].to_xpath
-          @actual_count = @doc.find(@xpath).size
+          begin
+            @actual_count = @doc.find(@xpath).size
+          rescue LibXML::XML::XPath::InvalidPath => e
+            @error = "Invalid XPath: #{@xpath}"
+            return nil
+          end
           @actual_count == @count
         end
         
         def failure_message
+          @error ||
           "Expected the following text to have #{@count} nodes matching " \
           "#{@selector}, but it had #{@actual_count}. The generated " \
           "xpath was #{@xpath}:\n#{@doc.inspect}" \

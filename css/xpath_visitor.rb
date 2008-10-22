@@ -78,6 +78,8 @@ module Nokogiri
         when '$='
           "substring(#{attribute}, string-length(#{attribute}) - " +
             "string-length(#{value}) + 1, string-length(#{value})) = #{value}"
+        when '^='
+          "starts-with(#{attribute}, #{value})"
         else
           attribute + " #{node.value[1]} " + "#{value}"
         end
