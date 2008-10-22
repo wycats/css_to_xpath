@@ -7,7 +7,7 @@ describe "The adjacent to combinator" do
   end
   
   it "<span + span> should return the last 3 span tags" do
-    HTML.should have_nodes("span[foo] + span", 3)
+    HTML.should have_nodes("span[foo] + span", 2)
   end
   
   it "<span[foo] + span> should return the last 3 span tags" do
